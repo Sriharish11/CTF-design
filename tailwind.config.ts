@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				mono: ['IBM Plex Mono', 'monospace'],
+				sans: ['IBM Plex Sans', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +66,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cyber theme colors
+				cyber: {
+					'black': '#121212',
+					'dark': '#1A1F2C',
+					'green': '#00FF41',
+					'blue': '#0FA0CE',
+					'purple': '#9b87f5',
 				}
 			},
 			borderRadius: {
@@ -84,11 +97,51 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'terminal-cursor': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
+				},
+				'glitch': {
+					'0%': {
+						transform: 'translate(0)'
+					},
+					'20%': {
+						transform: 'translate(-3px, 3px)'
+					},
+					'40%': {
+						transform: 'translate(-3px, -3px)'
+					},
+					'60%': {
+						transform: 'translate(3px, 3px)'
+					},
+					'80%': {
+						transform: 'translate(3px, -3px)'
+					},
+					'100%': {
+						transform: 'translate(0)'
+					}
+				},
+				'matrix-rain': {
+					'0%': {
+						transform: 'translateY(-100%)',
+						opacity: '0'
+					},
+					'20%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateY(100%)',
+						opacity: '0'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'terminal-cursor': 'terminal-cursor 1s infinite',
+				'glitch': 'glitch 0.5s infinite',
+				'matrix-rain': 'matrix-rain 8s linear infinite',
 			}
 		}
 	},
